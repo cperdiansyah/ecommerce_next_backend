@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const categoriesSchema = new mongoose.Schema(
   {
@@ -20,5 +20,6 @@ const categoriesSchema = new mongoose.Schema(
   }
 );
 
-module.exports =
-  mongoose.models.Category || mongoose.model('Category', categoriesSchema);
+const Category = mongoose.model('Category', categoriesSchema);
+
+export default Category;

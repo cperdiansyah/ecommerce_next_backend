@@ -7,6 +7,7 @@ import morgan from 'morgan';
 /* Routes */
 import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import categoryRoutes from './routes/categoryRoutes.js';
 // import orderRoutes from './routes/orderRoutes.js';
 
 /* Exception Handler */
@@ -24,6 +25,9 @@ app.use(express.json());
 
 /* Product routes */
 app.use('/api/products', productRoutes);
+
+/* Category Routes */
+app.use('/api/category', categoryRoutes);
 
 /* User Routes */
 app.use('/api/users', userRoutes);
