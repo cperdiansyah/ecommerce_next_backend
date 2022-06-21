@@ -3,6 +3,8 @@ import path from 'path';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import morgan from 'morgan';
+// var cors = require('cors');
+import cors from 'cors';
 
 /* Routes */
 import productRoutes from './routes/productRoutes.js';
@@ -20,17 +22,18 @@ const app = express();
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+app.use(cors());
 
 app.use(express.json());
 
 /* Product routes */
-app.use('/api/products', productRoutes);
+app.use('/api/product', productRoutes);
 
 /* Category Routes */
 app.use('/api/category', categoryRoutes);
 
 /* User Routes */
-app.use('/api/users', userRoutes);
+app.use('/api/user', userRoutes);
 
 /* Order Routes */
 // app.use('/api/orders', orderRoutes);

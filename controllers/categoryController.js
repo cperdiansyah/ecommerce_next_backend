@@ -14,4 +14,17 @@ const getCategories = asyncHandler(async (req, res) => {
   }
 });
 
-export { getCategories };
+//desc Get a single category
+//@route GET /api/category/:id
+//@access Public
+const getCategoryById = asyncHandler(async (req, res) => {
+  const category = await Category.findById(req.params.id);
+  if (category) {
+    res.status(200).json(category);
+  } else {
+    res.status(404);
+    throw new Error('Category not found');
+  }
+});
+
+export { getCategories, getCategoryById };

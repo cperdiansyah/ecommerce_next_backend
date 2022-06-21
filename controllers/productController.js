@@ -31,7 +31,7 @@ const getProducts = asyncHandler(async (req, res) => {
     {
       name: 1,
       price: 1,
-      image: 1,
+      images: 1,
       rating: 1,
     }
   );
